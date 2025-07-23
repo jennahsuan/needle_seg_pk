@@ -1,0 +1,28 @@
+PK_hyperparam:
+  cutNum: 50  ## carriage count
+  left_bright_weight: 0.7
+  left_shadow_weight: 0.3
+  right_bright_weight: 0.7
+  right_shadow_weight: 0.3
+
+Data:
+  ## !!! NOTE !!! Only set one of the directory to non-empty value, others 
+  ## raw_video_dir: a list of path of 3 video [L,C,R]
+
+  ## if we want to process the raw video directly
+  # raw_video_dir: [/mnt/c/Users/sonav/Downloads/processed_video/ultrasound_2025-06-13-15-07/L.mp4,/mnt/c/Users/sonav/Downloads/processed_video/ultrasound_2025-06-13-15-07/C.mp4, /mnt/c/Users/sonav/Downloads/processed_video/ultrasound_2025-06-13-15-07/R.mp4]
+  raw_video_dir: /mnt/c/Users/sonav/Dropbox/家庭資料室_Developer/Prodigy管理/zipper array data for PK豬肉打針/ultrasound_2025-06-13-15-07.mp4
+  ## if video is processed to frames already
+  sonosite_frame_dir: null #/mnt/c/Users/sonav/Dropbox/家庭資料室/Sonosite_20231003_1413_1364frames_abc（hard)
+  prodigy_frame_dir:  null #/mnt/c/Users/sonav/Downloads/processed_video/ultrasound_2025-06-13-15-07
+
+  frame_h: 512 #1758
+  frame_w: 512 #1758
+
+Detection_model:
+  name: m2f  ## Option: m2f, memm2f
+
+User_setting:
+  save_json: False   ## save prediction needles coordinates to json
+  save_mask: False   ## save PK result plot
+  target_fps: 15
