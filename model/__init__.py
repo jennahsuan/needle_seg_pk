@@ -1,0 +1,1 @@
+from .mask2former.meta_architecture import Mask2Former

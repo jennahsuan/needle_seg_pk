@@ -1,30 +1,19 @@
-__pycache__/
-logs/
+*__pycache__*
 pretrained_weight/
-wandb/
 demo/
 pseudo_label/
-model/GRAttVIS
-model/torchscale
+# model/GRAttVIS
+# model/torchscale
 *checkpoints*
 *mytest*
 *swattention_extension*
 *png*
-model/EVF-SAM/
-model/vis/
-model/SwinSMT/
-compare/
-model/mask2former/pixel_decoder/ops/
+# model/EVF-SAM/
+# model/vis/
+# model/SwinSMT/
+# compare/
+# model/mask2former/pixel_decoder/ops/
 
-## only keep specific files from SAM2
-model/SAM2/*
-!model/SAM2/sam2/
-model/SAM2/sam2/*
-!model/SAM2/sam2/modeling/
-model/SAM2/sam2/modeling/backbones
-!model/SAM2/sam2/utils/
-model/SAM2/sam2/utils/*
-!model/SAM2/sam2/utils/misc.py
 
 ## files in needle_seg_det
 *loss*
@@ -34,7 +23,30 @@ anchors.py
 *train*
 *pseudolabel*
 *pretrained_weight*
-*model*
+model/SAM2
+model/mask2former/deAOT.py
 *demo*
 *checkpoints*
 *kfold*
+post_processing.py
+visualization.py
+inference.ipynb
+
+## only keep specific files from model/
+!model/mask2former
+!model/mask2former/pixel_decoder
+model/mask2former/pixel_decoder/*
+!model/SAM2/sam2/modeling/
+model/SAM2/sam2/modeling/backbones
+!model/SAM2/sam2/utils/
+model/SAM2/sam2/utils/*
+!model/SAM2/sam2/utils/misc.py
+
+model/SAM2/*
+!model/SAM2/sam2/
+model/SAM2/sam2/*
+!model/SAM2/sam2/modeling/
+model/SAM2/sam2/modeling/backbones
+!model/SAM2/sam2/utils/
+model/SAM2/sam2/utils/*
+!model/SAM2/sam2/utils/misc.py

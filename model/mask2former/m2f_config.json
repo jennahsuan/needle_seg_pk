@@ -1,0 +1,33 @@
+{
+    "Data":{
+        "skip_frames":8
+    },
+    "Model":{
+        "unet_backbone" : {
+            "encoder_type_choices": ["TransNeXt-Tiny", "Swin-Small", "Swin-SMT", "ConvNeXt","facebook/convnextv2-base-22k"],
+            "encoder_type" : "ConvNeXt",
+            "transnext_tiny_params" : {
+                "embed_dims" : [72, 144, 288, 576],
+                "pretrained_path" : "./pretrained_weight/mask2former_transnext_tiny_512x512_160k_ade20k_in1k.pth"
+            },
+            "swin_small_params" : {
+                "embed_dims" : [96, 192, 384, 768],
+                "pretrained_path" : "./pretrained_weight/swin_tiny_patch4_window7_224.pth"
+            },
+            "convnext_tiny_params" : {
+                "embed_dims" : [128,256,512,1024],
+                "pretrained_path" : "./pretrained_weight/convnextv2_base_22k_384_ema.pt"
+            },
+            "decoder_type": "pixelup"
+        },
+        "mask2former_decoder" : {
+            "type": null,
+            "hidden_dim" : 256,
+            "num_queries" : 1,
+            "nheads" : 8,
+            "dim_feedforward" : 2048,
+            "dec_layers" : 3,
+            "pre_norm" : false
+        }
+    }
+}
