@@ -1,19 +1,12 @@
 *__pycache__*
-pretrained_weight/
+# pretrained_weight/
 demo/
 pseudo_label/
-# model/GRAttVIS
-# model/torchscale
 *checkpoints*
 *mytest*
 *swattention_extension*
 *png*
-# model/EVF-SAM/
-# model/vis/
-# model/SwinSMT/
-# compare/
-# model/mask2former/pixel_decoder/ops/
-
+*pth*
 
 ## files in needle_seg_det
 *loss*
@@ -22,10 +15,8 @@ anchors.py
 *test*
 *train*
 *pseudolabel*
-*pretrained_weight*
 model/SAM2
 *demo*
-*checkpoints*
 *kfold*
 post_processing.py
 visualization.py
@@ -33,14 +24,6 @@ inference.ipynb
 
 ## only keep specific files from model/
 !model/mask2former
-!model/mask2former/pixel_decoder
-model/mask2former/pixel_decoder/*
-!model/SAM2/sam2/modeling/
-model/SAM2/sam2/modeling/backbones
-!model/SAM2/sam2/utils/
-model/SAM2/sam2/utils/*
-!model/SAM2/sam2/utils/misc.py
-
 # model/SAM2/*
 # !model/SAM2/sam2/
 # model/SAM2/sam2/*
