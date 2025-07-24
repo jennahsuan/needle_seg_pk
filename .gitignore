@@ -13,7 +13,8 @@ pseudo_label/
 anchors.py
 *evaluation*
 *test*
-*train*
+*train_*
+trainer.py
 *pseudolabel*
 model/SAM2
 *demo*
@@ -22,13 +23,14 @@ post_processing.py
 visualization.py
 inference.ipynb
 
-## only keep specific files from model/
+# ## only keep specific files from model/
 !model/mask2former
-# model/SAM2/*
-# !model/SAM2/sam2/
-# model/SAM2/sam2/*
-# !model/SAM2/sam2/modeling/
-# model/SAM2/sam2/modeling/backbones
-# !model/SAM2/sam2/utils/
-# model/SAM2/sam2/utils/*
-# !model/SAM2/sam2/utils/misc.py
+!pretrained_weight/download.sh
+# # model/SAM2/*
+# # !model/SAM2/sam2/
+# # model/SAM2/sam2/*
+# # !model/SAM2/sam2/modeling/
+# # model/SAM2/sam2/modeling/backbones
+# # !model/SAM2/sam2/utils/
+# # model/SAM2/sam2/utils/*
+# # !model/SAM2/sam2/utils/misc.py
