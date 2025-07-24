@@ -24,7 +24,6 @@ anchors.py
 *pseudolabel*
 *pretrained_weight*
 model/SAM2
-model/mask2former/deAOT.py
 *demo*
 *checkpoints*
 *kfold*
@@ -42,11 +41,11 @@ model/SAM2/sam2/modeling/backbones
 model/SAM2/sam2/utils/*
 !model/SAM2/sam2/utils/misc.py
 
-model/SAM2/*
-!model/SAM2/sam2/
-model/SAM2/sam2/*
-!model/SAM2/sam2/modeling/
-model/SAM2/sam2/modeling/backbones
-!model/SAM2/sam2/utils/
-model/SAM2/sam2/utils/*
-!model/SAM2/sam2/utils/misc.py
+# model/SAM2/*
+# !model/SAM2/sam2/
+# model/SAM2/sam2/*
+# !model/SAM2/sam2/modeling/
+# model/SAM2/sam2/modeling/backbones
+# !model/SAM2/sam2/utils/
+# model/SAM2/sam2/utils/*
+# !model/SAM2/sam2/utils/misc.py
