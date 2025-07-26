@@ -21,7 +21,10 @@ class Mask2Former(nn.Module):
     def __init__(self, cfg):
         super().__init__()
 
-        self.freeze_backbone = cfg["Train"].get("freeze_backbone", False)
+        if "Train" not in cfg:
+            self.freeze_backbone = False
+        else:
+            self.freeze_backbone = cfg["Train"].get("freeze_backbone", False)
         # image size
         self.img_size = cfg["Model"]["image_size"]
 

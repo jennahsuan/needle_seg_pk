@@ -106,7 +106,7 @@
         "image_size" : 384,
         "time_window" : 3,
         "structure" : "mem_m2f",
-        "dynamic_tanh":true,
+        "dynamic_tanh":false,
         "cls_head":true,
         "det_head":false,
         "ckpt_path":"pretrained_weight/memm2f_cls_rB384_pixu_RNA_C2sam2_BLLF20MA2_tciou78_2BqattGP_v6imgLCR_k2_update.pth"

@@ -4,12 +4,6 @@
         "folder_dir" : "C:/Dropbox/家庭資料室",
         
         "line_width": 20,
-        "version":  6,
-        "train_portion": 1,
-        "synthesis": false,
-        "curriculum_learning":false,
-        "adaptive_T_learning":false,
-
         "kfold_cross_val_folder_v6":[
             
             {"e231219_1057":"Sonosite_20231219_1057_846frames_abc(easy)",
@@ -110,36 +104,5 @@
         "cls_head":true,
         "det_head":false,
         "ckpt_path":"pretrained_weight/convnext_mask2former_cls_rB384_pixup_foc20aux1_v6imgLCR_k2.pth"
-    },
-    
-    "Train":{
-        "freeze_backbone": false,
-        "experiment_id" : "cls_T512_pixup_foc20_v6imgLCR",
-        "visualize" : false,
-        "det_num_classes" : 1,
-        "batch_size" : 4,
-        "epochs" : 20,
-        "blr" : 3.0e-5,
-        "accumulation_steps" : 8,
-        "loss" : "dice+focal",
-        "loss_weight":{"dice":1,"focal":20},
-        "buffer_num_sample" : 8,
-        "soft_seg": false
-    },
-    
-    "Validation":{
-        "ema":0.999,
-        "mean_teacher":false,
-        "consistency_weight":1e-4
-    },
-    
-    "Semi_Supervise":{
-        "Pseudo_label":{
-            "model_thres": null,
-            "mask_thres":0.97,
-            "root_dir": "./pseudo_label",
-            "folder_note": "",
-            "pl_version":1
-        }
     }
 }
