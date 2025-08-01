@@ -56,3 +56,6 @@ If "error: Microsoft Visual C++ 14.0 or greater is required", download Microsoft
 	* In **`Set Coordinates`**, if the video contains 3 frames in the same position as in `家庭資料室_Developer/Prodigy管理/zipper array data for PK豬肉打針/ultrasound_2025-06-13-15-07.mp4`, then just run the 2nd cell (use default values). Otherwise, run the first cell to check out the coordinates and set the coordinate values manually in the 2nd cell.
 	* In `PK` function, paramters such as `left_bright_weight` are used to compute on the bright and shadow pixel average of each carriage.
 	* In `inference_LCR_image_with_flag` function, the model outputs endpoints `x1`, `y1` & `x3`, `y3`. The depth `x1y1_regression_depth` & `x3y3_regression_depth` (z1 & z3) is estimated by `PK()`.
+
+## Other notes:
+- Before cropping the frames online in thhe code, a pre-cropped video experiment can also be tested. You can crop a single video into 3 videos by `Microsoft Clipchamp`, capture the frames of them and save them in three folders `L`, `C` and `R`. Then, set the `Data.prodigy_frame_dir` to the root of these three folders.
