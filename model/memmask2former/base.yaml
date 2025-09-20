@@ -1,0 +1,54 @@
+pixel_dim: 256
+key_dim: 64
+value_dim: 64  ## memory feature dim ##  sam2 mem att uses 64!!
+# sensory_dim: 256
+## read out dim:
+embed_dim: 256
+
+## My Expiriment settings
+### ms_readout: null -> replace ms feature w/ readout (default);  avg -> ms=avg(readout,ms); sum
+ms_readout: null
+### use MaskUpsampleblock to upscale, add, and pass conv before trans dec
+B1: False
+
+mem_scale: 1
+shallow_backbone: True
+
+## bottle neck to place memory attention modules
+## 1: after encoder, before pixel decoder (bad, cannot learn)
+## 2: after pixel decoder, before transformer decoder (previous default)
+Neck: 2 
+
+memory_attention:
+  method: sam2
+  CA_before_readout: null  ## convolution attention [ca, rfa]
+  activation_before_readout: null
+  branch: 1
+  local_branch:
+    temporal: true
+    spatial: true
+    short_term_t: 1
+
+pixel_encoder:
+  ms_dims: [256, 256, 256, 256]
+
+mask_encoder:
+  method: sam2
+  #### pix feat smallest resolution:
+  final_dim: 256
+
+mask_decoder:
+  # first value must equal embed_dim
+  up_dims: [256, 128, 128]
+
+## Self-sorting (resample) https://arxiv.org/abs/2408.00874
+memory_bank:
+  resample: False
+
+pixel_pe_scale: 32
+pixel_pe_temperature: 128
+
+object_transformer:
+  enabled: False
+
+sam2_weight_path: ./model/SAM2/checkpoints/sam2.1_hiera_base_plus.pt

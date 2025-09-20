@@ -59,3 +59,5 @@ If "error: Microsoft Visual C++ 14.0 or greater is required", download Microsoft
 
 ## Other notes:
 - Before cropping the frames online in thhe code, a pre-cropped video experiment can also be tested. You can crop a single video into 3 videos by `Microsoft Clipchamp`, capture the frames of them and save them in three folders `L`, `C` and `R`. Then, set the `Data.prodigy_frame_dir` to the root of these three folders.
+
+- Crop frame and json code: [colab](https://colab.research.google.com/drive/1IDEzVgIBcPq9fVombAORn-TQ8SG4xLlT?usp=sharing#scrollTo=55a55FjP1onU)

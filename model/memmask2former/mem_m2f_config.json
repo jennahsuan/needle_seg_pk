@@ -1,0 +1,50 @@
+{
+    "Data":{
+        "skip_frames":8
+    },
+    "Model":{
+        "unet_backbone" : {
+            "encoder_type_choices": ["TransNeXt-Tiny", "Swin-Small", "Swin-SMT", "ConvNeXt",[128,256,512,1024],
+                        "./convnext_mask2former_checkpoints/convnext_mask2former_cls_B384_pixel_v4_ema.pth"],
+            "encoder_type" : "ConvNeXt",
+            "transnext_tiny_params" : {
+                "embed_dims" : [72, 144, 288, 576],
+                "pretrained_path" : "./pretrained_weight/mask2former_transnext_tiny_512x512_160k_ade20k_in1k.pth"
+            },
+            "swin_small_params" : {
+                "embed_dims" : [96, 192, 384, 768],
+                "pretrained_path" : "./pretrained_weight/swin_tiny_patch4_window7_224.pth"
+            },
+            "convnext_tiny_params" : {
+                "embed_dims" : [128,256,512,1024],
+                "pretrained_path" : "./pretrained_weight/convnextv2_base_22k_384_ema.pt"
+            },
+            "decoder_type": "pixel"
+        },
+        "mask2former_decoder" : {
+            "hidden_dim" : 256,
+            "num_queries" : 1,
+            "nheads" : 8,
+            "dim_feedforward" : 2048,
+            "dec_layers" : 3,
+            "pre_norm" : false,
+            "feat_extractor_ckpt_path": "./convnext_mask2former_checkpoints/convnext_mask2former_cls_B384_pixel_weakaug_v4_ema.pth"
+        },
+        "track_modules":{
+            "vis_query_att":true,
+            "branch":2,
+            "short_term_t":1,
+            "qatt_block":"gp",
+            
+            "query_membank_att":false,
+            "moe_q": null,
+            "ens_q": false
+        }
+    },
+    "Train":{
+        "video_len":8
+    },
+    "Validation":{
+        "video_len":8
+    }
+}
