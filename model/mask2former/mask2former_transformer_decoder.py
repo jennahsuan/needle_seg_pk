@@ -16,7 +16,7 @@ from torch.nn import functional as F
 from typing import Optional
 
 try:
-    from ...archive.deAOT import GatedPropagation, DWConv1d, silu
+    from ..DeAOT.deAOT import GatedPropagation, DWConv1d, silu
 except:
     pass
 

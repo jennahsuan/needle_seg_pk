@@ -8,7 +8,9 @@ needle_seg_pk/
     ├── lib/
     ├── model/
     │   └── mask2former/
-    │   └── mem_mask2former/ (not uplaoded yet)
+    │   └── memmask2former/ 
+    │   └── DeAOT/ (functions from https://github.com/yoxu515/aot-benchmark) 
+    │   └── SAM2/ 
     ├── .gitignore
     ├── dataset.py
     ├── environment.yml
@@ -43,10 +45,10 @@ download and move swattention_extension folder to `./model/mask2former`
 NOTE: This should be done under `conda activate needle_seg` 
 If "error: Microsoft Visual C++ 14.0 or greater is required", download Microsoft C++ Build Tools. -->
 
-3. Checkpoints are in `Dropbox\家庭資料室_Developer\Prodigy管理\inference_PK\ckpt`, run `bash pretrained_weight/download.sh` to place them in the `pretrain_weight` folder.
+3. **Checkpoints**: stored in `Dropbox\家庭資料室_Developer\Prodigy管理\inference_PK\ckpt`, run `bash pretrained_weight/download.sh` to place them in the `pretrain_weight` folder.
 
 ## Inference and PK Guidance
-**NOTE**: importaant code is highlight with `=======`
+**NOTE**: important code is highlight with `=======`
 1. Set `configs/config_PK.yml`
 	* If input is raw prodigy video, set `raw_video_dir` with the video directory, and `sonosite_frame_dir` and `prodigy_frame_dir` to `null`
 	* Tune the hyperparamters `left_bright_weight`, `left_shadow_weight` ...
@@ -59,5 +61,4 @@ If "error: Microsoft Visual C++ 14.0 or greater is required", download Microsoft
 
 ## Other notes:
 - Before cropping the frames online in thhe code, a pre-cropped video experiment can also be tested. You can crop a single video into 3 videos by `Microsoft Clipchamp`, capture the frames of them and save them in three folders `L`, `C` and `R`. Then, set the `Data.prodigy_frame_dir` to the root of these three folders.
-
-- Crop frame and json code: [colab](https://colab.research.google.com/drive/1IDEzVgIBcPq9fVombAORn-TQ8SG4xLlT?usp=sharing#scrollTo=55a55FjP1onU)
+- Original code crop frame and json: [colab](https://colab.research.google.com/drive/1IDEzVgIBcPq9fVombAORn-TQ8SG4xLlT?usp=sharing#scrollTo=55a55FjP1onU)

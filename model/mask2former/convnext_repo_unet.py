@@ -16,7 +16,10 @@ from functools import partial
 
 ## available decoder
 from .upsampling_blocks import ResidualBlock, UpsampleBlock
-from .swin_unet import PatchEmbed, PatchExpand, FinalPatchExpand_X4, BasicLayer_up
+try:
+    from .swin_unet import PatchEmbed, PatchExpand, FinalPatchExpand_X4, BasicLayer_up
+except:
+    pass
 from .pixel_decoder.msdeformattn_pixel_decoder import MSDeformAttnPixelDecoder
 
 
