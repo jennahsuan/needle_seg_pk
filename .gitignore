@@ -13,7 +13,7 @@ pseudo_label/
 anchors.py
 *evaluation*
 *test*
-*train_*
+# *train_*
 trainer.py
 *pseudolabel*
 # model/SAM2

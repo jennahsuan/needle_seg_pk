@@ -1,0 +1,14 @@
+main_training:
+  name: main_training
+  enabled: True
+  amp: True
+
+  point_supervision: False # Cutie use True
+  train_num_points: 12544
+  oversample_ratio: 3.0
+  importance_sample_ratio: 0.75
+  # clip_grad_norm: 3.0
+
+  num_ref_frames: 3
+  seq_length: 16
+  num_objects: 1
