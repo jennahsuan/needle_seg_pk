@@ -49,6 +49,7 @@ If "error: Microsoft Visual C++ 14.0 or greater is required", download Microsoft
 
 ## Inference and PK Guidance
 **NOTE**: important code is highlight with `=======`
+0. Make sure the laptop power is at the best utility to speed up GPU.
 1. Set `configs/config_PK.yml`
 	* If input is raw prodigy video, set `raw_video_dir` with the video directory, and `sonosite_frame_dir` and `prodigy_frame_dir` to `null`
 	* Tune the hyperparamters `left_bright_weight`, `left_shadow_weight` ...
@@ -60,5 +61,6 @@ If "error: Microsoft Visual C++ 14.0 or greater is required", download Microsoft
 	* In `inference_LCR_image_with_flag` function, the model outputs endpoints `x1`, `y1` & `x3`, `y3`. The depth `x1y1_regression_depth` & `x3y3_regression_depth` (z1 & z3) is estimated by `PK()`.
 
 ## Other notes:
+- Some useful tool to speed up: `parallel_backend` in Regression, postprocessing the needle into coordinates (`min_rect_2_line()`), threading (`compile()`), avoid duplicate color change on the image.
 - Before cropping the frames online in the code, a pre-cropped video experiment can also be tested. You can crop a single video into 3 videos by `Microsoft Clipchamp`, capture the frames of them and save them in three folders `L`, `C` and `R`. Then, set the `Data.prodigy_frame_dir` to the root of these three folders.
 - Original code crop frame and json: [colab](https://colab.research.google.com/drive/1IDEzVgIBcPq9fVombAORn-TQ8SG4xLlT?usp=sharing#scrollTo=55a55FjP1onU)
