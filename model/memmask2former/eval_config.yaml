@@ -1,0 +1,18 @@
+flip_aug: False
+
+# maximum shortest side of the input; -1 means no resizing
+# With eval_vos.py, we usually just use the dataset's size (resizing done in dataloader)
+# this parameter is added for the sole purpose for the GUI in the current codebase
+# InferenceCore will downsize the input and restore the output to the original size if needed
+# if you are using this code for some other project, you can also utilize this parameter
+# max_internal_size: -1
+
+mem_every: 3
+
+# only relevant when long_term is not enabled
+max_mem_frames: 5
+
+# only relevant when long_term is enabled
+long_term:
+  max_mem_frames: 10  ## to calculate work-memory bank size
+  min_mem_frames: 5
