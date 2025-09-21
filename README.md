@@ -3,31 +3,31 @@
 ## Code Directory Layout
 ```
 needle_seg_pk/
-    ├── checkpoints/
+    ├── pretrained_weight/
     ├── configs/
     ├── lib/
     ├── model/
     │   └── mask2former/
     │   └── memmask2former/ 
-    │   └── DeAOT/ (functions from https://github.com/yoxu515/aot-benchmark) 
+    │   └── DeAOT/ (support functions from https://github.com/yoxu515/aot-benchmark) 
     │   └── SAM2/ 
     ├── .gitignore
-    ├── dataset.py
+    ├── dataset.py (dataset and augmentation)
     ├── environment.yml
     ├── environment_linux.yml (this is for linux only)
     ├── inference_PK.ipynb
-    ├── MEMO5090.md
+    ├── MEMO5090.md  (installation & developement guideline for RTX5090 laptop)
     ├── README.md
 ```
 
 ## Set up
 For RTX5090, ignore the below instructpions and check out `MEMO5090.md`
-1. build conda env
+1. Build conda env
 	```bash
 	conda env create -f environment.yml
 	conda activate needle_seg
 	```
-2. other packages
+2. Install other packages
 	```bash
 	pip install psutil ninja omegaconf
 	mim install mmcv-full==1.6.0
@@ -60,5 +60,5 @@ If "error: Microsoft Visual C++ 14.0 or greater is required", download Microsoft
 	* In `inference_LCR_image_with_flag` function, the model outputs endpoints `x1`, `y1` & `x3`, `y3`. The depth `x1y1_regression_depth` & `x3y3_regression_depth` (z1 & z3) is estimated by `PK()`.
 
 ## Other notes:
-- Before cropping the frames online in thhe code, a pre-cropped video experiment can also be tested. You can crop a single video into 3 videos by `Microsoft Clipchamp`, capture the frames of them and save them in three folders `L`, `C` and `R`. Then, set the `Data.prodigy_frame_dir` to the root of these three folders.
+- Before cropping the frames online in the code, a pre-cropped video experiment can also be tested. You can crop a single video into 3 videos by `Microsoft Clipchamp`, capture the frames of them and save them in three folders `L`, `C` and `R`. Then, set the `Data.prodigy_frame_dir` to the root of these three folders.
 - Original code crop frame and json: [colab](https://colab.research.google.com/drive/1IDEzVgIBcPq9fVombAORn-TQ8SG4xLlT?usp=sharing#scrollTo=55a55FjP1onU)
