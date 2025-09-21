@@ -156,17 +156,6 @@ class MemInferenceWrapper(MemMask2Former):
                     self.past_readouts_list.append([])
             self.mem_manager.init_memory()
 
-    ## Not used now ----------------
-
-    def update_config(self, cfg):
-        self.mem_every = cfg['mem_every']
-        if self.multi_scale_memory > 1:
-            for mem_manager in self.memory:
-                mem_manager.update_config(cfg)
-        else:
-            self.memory.update_config(cfg)
-
-    ## -----------------------------
 
     def memory_engaged(self) -> bool:
         return self.mem_manager.engaged
@@ -456,16 +445,6 @@ class MemInferenceWrapper(MemMask2Former):
 
         return out_dict
 
-    # def delete_objects(self, objects: List[int]) -> None:
-    #     """
-    #     Delete the given objects from the memory.
-    #     """
-    #     self.object_manager.delete_objects(objects)
-    #     if self.multi_scale_memory > 1:
-    #         for mem_manager in self.memory:
-    #             mem_manager.purge_except(self.object_manager.all_obj_ids)
-    #     else:
-    #         self.memory.purge_except(self.object_manager.all_obj_ids)  ## delete unwanted obj in work & longterm memory
 
 
 

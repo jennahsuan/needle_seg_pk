@@ -16,12 +16,15 @@ anchors.py
 *train_*
 trainer.py
 *pseudolabel*
-model/SAM2
+# model/SAM2
 *demo*
 *kfold*
 post_processing.py
 visualization.py
 inference.ipynb
+archive/
+.idea
+.DS_Store
 
 # ## only keep specific files from model/
 !model/mask2former
